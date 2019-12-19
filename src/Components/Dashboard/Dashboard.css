@@ -1,0 +1,9 @@
+.main{
+    transform :translateX(0);
+}
+.main.slide{
+    margin-left:42px;
+    transform: translateX(19%);
+    transition: 0.5s ease;
+    
+};
