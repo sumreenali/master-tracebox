@@ -1,7 +1,8 @@
 import React from 'react'
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton'
 import './toolbar.css'
-// import './girl-logo.png'
+import logo from '../../asset/img/logo1.png'
+
 
  const Toolbar = props => {
     
@@ -12,8 +13,8 @@ import './toolbar.css'
                 <DrawerToggleButton click={props.drawerClickHandler} />
             </div>
             <div className="toolbar_logo">
-                <a href="/" >MAKEUP TRACEBOX </a>
-                {/* <img src="./girl-logo.png" width="30" height="60"/></a> */} 
+                <a href="/" >
+                <img src={logo} width="160" height="135"/></a>
             </div>
             <div className="spacer"></div>
             <div>

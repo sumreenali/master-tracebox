@@ -8,6 +8,9 @@
     /* background: #961167; */
     /* background: #961167;    */
     background: white;
+    box-shadow: 1px 0px 2px rgba(0,0, 0.5);
+    z-index:1000;
+    position: fixed;
     /* background: red; */
 }
 
@@ -20,18 +23,20 @@
 
 .toolbar_logo{
     margin-left: 1rem;
+   
 }
 
-.toolbar_logo a {
-    /* color: #521751;
-    color: white; */
+/* .toolbar_logo a {
+     color: #521751;
+    color: white; 
+
     color: red;
     text-decoration: none;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: bold; 
     
-}
-
+} 
+*/
 .toolbar_logo.slide{
     margin-left:72%;
     transition: 0.3s ease-out; 
