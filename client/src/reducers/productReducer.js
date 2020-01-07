@@ -34,6 +34,13 @@ export default function(state= initialState, action){
             return{
                 ...state
             };
+        
+        case DELETE_PRODUCT:
+            return{
+                ...state,
+                product: state.product.filter(product =>product.id !== acion.payload)
+            }
+
         default:
             return state;
     }

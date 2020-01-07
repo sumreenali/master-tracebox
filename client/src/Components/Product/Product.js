@@ -3,7 +3,7 @@ import { Table,Button, ButtonGroup } from 'reactstrap';
 // import {CSSTransition, TransitionGroup } from 'react-transition-group';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {connect} from 'react-redux';
-import {getProducts} from '../../actions/productActions';
+import {getProducts, deleteProduct} from '../../actions/productActions';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import './product.css'
@@ -34,12 +34,11 @@ class Product extends Component{
         }
     }
 
-    handleRemove = (product, id) =>{
+    handleRemove = (id) =>{
         this.setState(state => ({
-             opacity:0,
-            product: state.product.filter(product => product.id !==id)
-            
+             opacity:0,            
         }));
+        this.props.deleteProduct(id)
        
     }
 
@@ -97,7 +96,7 @@ class Product extends Component{
                                 <ButtonGroup size="md">
                                     <Button style={{backgroundColor:"#e39e44"}}>Edit</Button>
                                     <Button style={{backgroundColor:"#c22370"}} 
-                                    onClick={() =>this.handleRemove(product,id)}>Delete</Button>
+                                    onClick={() =>this.handleRemove(id)}>Delete</Button>
                                 </ButtonGroup>
                             </td>
                         </tr>
@@ -114,11 +113,12 @@ class Product extends Component{
 Product.propTypes = {
     //actions as props
     getProducts: PropTypes.func.isRequired,
+    deleteProduct: PropTypes.func.isRequired,
     //states as props
-    product: PropTypes.object.isRequired
+    product: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state =>({
     product: state.product
 })
-export default connect(mapStateToProps, {getProducts})(Product);
+export default connect(mapStateToProps, {getProducts, deleteProduct})(Product);
