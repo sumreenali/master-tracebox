@@ -1,46 +1,37 @@
 import uuid from 'uuid';
-import {GET_PRODUCTS, ADD_PRODUCT, EDIT_PRODUCT, DELETE_PRODUCT} from '../actions/types';
+import {GET_PRODUCTS, ADD_PRODUCT, EDIT_PRODUCT, DELETE_PRODUCT, LOADING_PRODUCT} from '../actions/types';
 
 const initialState = {
-    product: [
-        {
-            id:uuid(),
-            productCount:1,
-            image:'abcd image',
-            name:'Nevea Honey Lotion',
-            description:'Honey Lotion 500 ml bottle',
-            price:'500',
-            quantity:'20',
-            date:Date.now(),
-            status:'active'
-        },
-        {
-           id:uuid(),
-           productCount:1,
-           image:'abcd image',
-           name:'Loreal Red Lipstick',
-           description:'Red Lipstick',
-           price:'500',
-           quantity:'20',
-           date:Date.now(),
-           status:'active'
-       },
-    ]
+    product: [],
+    loading: false
 }
 
 export default function(state= initialState, action){
     switch(action.type){
         case GET_PRODUCTS:
             return{
-                ...state
+                ...state,
+                product: action.payload,
+                loading: false
             };
         
         case DELETE_PRODUCT:
             return{
                 ...state,
-                product: state.product.filter(product =>product.id !== acion.payload)
+                product: state.product.filter(product =>product._id !== action.payload)
             }
-
+        
+        case ADD_PRODUCT:
+            return{
+                ...state,
+                product:[action.payload,...state.product]
+            } 
+        
+        case LOADING_PRODUCT:
+            return{
+                ...state,
+                loading: true
+            }
         default:
             return state;
     }

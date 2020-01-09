@@ -1,0 +1,14 @@
+.main{
+    /* transform :translateX(0); */
+    width:90%;
+    margin-top: 90px;
+  
+   
+}
+.main.slide{
+    margin-left:25%;
+    width:70%;
+    /* transform: translateX(19%); */
+    transition: 0.5s ease;
+    
+};

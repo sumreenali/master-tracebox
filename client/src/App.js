@@ -1,22 +1,28 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {BrowserRouter as Router , Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router , Route} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import store from './store'
-// import ManufactuerCreate from './Components/Manufacturer/ManufacturerCreate'
-// import ManufacturerList from './Components/Manufacturer/ManufacturerDetails'
-// import ManufacturerEdit from './Components/Manufacturer/ManufacturerEdit'
+import Navbar from './Components/Toolbar/Toolbar';
 import Dashboard  from './Components/Dashboard/Dashboard'
+import Login from './Components/Auth/Login';
+import Register from './Components/Auth/Register';
+import Profile from './Components/Auth/Profile';
+
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Provider store ={store}>
         <Router>
-          <Dashboard/>
-          {/* <Route path="/manufacturer" exact component={ManufacturerList}/>
-          <Route path="/manufacturer-edit/:id" component={ManufacturerEdit}/>
-          <Router path="/manufacturer-create" component={ManufactuerCreate}/> */}
+          <Navbar/>
+          <div className="mt-5"> 
+          <Route exact path='/' component={Login}/>
+          <Route exact path='/login' component={Login}/>
+          <Route exact path='/register' component={Register}/>
+          <Route exact path='/profile' component={Profile}/>
+          <Route exact path='/dashboard' component={Dashboard}/>       
+          </div>
         </Router>
       </Provider>
     </div>

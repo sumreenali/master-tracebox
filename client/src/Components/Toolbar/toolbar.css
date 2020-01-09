@@ -52,17 +52,26 @@
     display: flex;
 }
 
-.toolbar_navigation-items a{
+.toolbar_navigation-items {
+    display: block;
+}
+.nav-link{
     /* color: #521751; */
     /* color: white; */
     color: red;
     text-decoration: none;
-    padding: 0 1rem;
+    display: block;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    font-size: medium;
 }
 
-.toolbar_navigation-items a:hover,
-.toolbar_navigation-items a:active{
-    color:#fa923f;
+.nav-link:hover,
+.nav-link:active{
+    color:white;
+    background-color:#32bcdb;
+    
+    transition: all 0.3s ease-in;
 }
 
 @media (max-width: 769px){
