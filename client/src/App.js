@@ -18,8 +18,8 @@ function App() {
           <Navbar/>
           <div className="mt-5"> 
           <Route exact path='/' component={Login}/>
-          <Route exact path='/login' component={Login}/>
-          <Route exact path='/register' component={Register}/>
+          <Route exact path='/user/login' component={Login}/>
+          <Route exact path='/user/register' component={Register}/>
           <Route exact path='/profile' component={Profile}/>
           <Route exact path='/dashboard' component={Dashboard}/>       
           </div>

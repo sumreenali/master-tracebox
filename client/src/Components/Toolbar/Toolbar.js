@@ -18,19 +18,19 @@ import logo from '../../asset/img/logo1.png'
             <header className="toolbar">
             <nav className="toolbar_navigation">
                 <div className="toolbar_logo">
-                    <a href="/login" >
+                    <a href="/user/login" >
                     <img src={logo} width="160" height="135" alt="logo"/></a>
                 </div>
                 <div className="spacer"></div>
                 <div>
                 <ul>
                     <li className="toolbar_navigation-items">
-                        <Link to="/login" className="nav-link">
+                        <Link to="/user/login" className="nav-link">
                             Login
                         </Link>
                         </li>
                         <li className="toolbar_navigation-items">
-                        <Link to="/register" className="nav-link">
+                        <Link to="/user/register" className="nav-link">
                             Sign Up
                         </Link>
                         </li>
@@ -60,7 +60,7 @@ import logo from '../../asset/img/logo1.png'
                     </Link>
                     </li>
                     <li className="toolbar_navigation-items">
-                    <a href="/logout" onClick={this.logOut} className="nav-link">
+                    <a href="/user/logout" onClick={this.logOut} className="nav-link">
                         Logout
                     </a>
                     </li>
